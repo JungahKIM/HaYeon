@@ -17,4 +17,4 @@ mainbanner: [
     iconname: "bi-facebook",
     url: "https://www.facebook.com/easyspub/",
   },
-]
+],
