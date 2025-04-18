@@ -14,3 +14,41 @@ data() {
           ],
         },
       },
+
+
+부모컴포넌트 
+
+<div class="wrap">
+    <layout>
+        <template #header="slotProps">
+            <h1> {{ slotProps.message }} </h1>
+
+            <button @click="slotProps.open">열기</button>
+        </template>
+    </layout>
+</div>
+
+자식(하위) 컴포넌트 
+
+<div class="container">
+    <header>
+        <slot name="header" :user="message"></slot>
+    </header>
+</div>
+
+<script>
+    export default {
+        data() {
+            return {
+                message: 'Do it! vue.js로 UI 만들기',
+                isOpen: false
+            };
+        },
+        methods: {
+            open() {
+                console.log ('run open')
+                this.isOpen = true
+            },
+        },
+    },
+</script>
